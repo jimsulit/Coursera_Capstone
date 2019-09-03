@@ -1,6 +1,6 @@
 
 # CAPSTONE PROJECT: BATTLE OF THE NEIGHBORHOODS
-## Singapore Visitors and Expatriates Venue Recommendation
+## Housing Recommender System for Travelers and Expats
 
 ________
 ## I. PURPOSE
