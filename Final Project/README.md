@@ -33,7 +33,7 @@ ________
 This demonstration will make use of the following data sources:
 
 #### Singapore Towns and median residential rental prices.
-Data will retrieved from Singapore open dataset from <a href='https://data.gov.sg/dataset/b35046dc-7428-4cff-968d-ef4c3e9e6c99'>median rent by town and flattype</a> from https://data.gov.sg website. 
+Data will retrieved from Singapore open dataset from <a href='https://data.gov.sg/dataset/b35046dc-7428-4cff-968d-ef4c3e9e6c99'>median rent by town and flattype</a> from https://data.gov.sg website.
 
 The original data source contains median rental prices of Singapore HDB units from 2005 up to 2nd quarter of 2018. I will retrieve rental the most recent recorded rental prices from this data source (Q2 2018) being the most relevant price available at this time. For this demonstration, I will simplify the analysis by using the average rental prices of all available flat type.
 
@@ -212,9 +212,9 @@ The following tasks will be performed:
 
 
 #### 2. Retrieve town coordinates.
-Google apiwas be used to retrive the coordinates (latitude and longitude of each town centers. 
+Google apiwas be used to retrive the coordinates (latitude and longitude of each town centers.
 For this exercise, I just used the MRT stations as the center points of each evaluated towns.
-The town coordinates will be used in retrieval of Foursquare API location data. 
+The town coordinates will be used in retrieval of Foursquare API location data.
 
 
 ```python
@@ -452,12 +452,9 @@ To demonstrate user selection of places of interest, We will use this Food Venue
  * Cafés
  * Other food venues
 
-List of my FourSquare Data collection saved in Github can be found in the following location:
- * https://github.com/crismag/Coursera_Capstone/tree/master/saved_data
-
 I used the FourSquare API to retrieve venue scores of locations. Note that there is max query limit of 50 in FourSquare API for free subscription. So use or query carefully.
 
-#### Data cleanup uneeded entries
+#### Data cleanup unneeded entries
 * Eliminate possible venue duplicates.
 * Improve the quality of our venue selection by removing venues with no ratings or 0.0
 
@@ -892,7 +889,7 @@ I used the FourSquare API to retrieve venue scores of locations. Note that there
 
 #### What are the top 20 most common venue types?
 
-<img src = "https://raw.githubusercontent.com/crismag/Coursera_Capstone/master/saved_data/top10_reco_venue_food_category.png" width = 800, align = "center">
+<img src = "https://raw.githubusercontent.com/jmsulyt/Coursera_Capstone/master/saved_data/top10_reco_venue_food_category.png" width = 800, align = "center">
 <pre>
     category
     Food Courts              92
@@ -918,7 +915,7 @@ I used the FourSquare API to retrieve venue scores of locations. Note that there
 </pre>
 #### What are the top 20 venues given with highest score rating?
 
-<img src = "https://raw.githubusercontent.com/crismag/Coursera_Capstone/master/saved_data/top_town_venue_reccount.png" width = 800, align = "center">
+<img src = "https://raw.githubusercontent.com/jmsulyt/Coursera_Capstone/master/saved_data/top_town_venue_reccount.png" width = 800, align = "center">
 
 <pre>
     Town           category            
@@ -954,7 +951,7 @@ I used the FourSquare API to retrieve venue scores of locations. Note that there
 sg_onehot = pd.get_dummies(singapore_town_venues[['category']], prefix="", prefix_sep="")
 
 # add Town column back to dataframe
-sg_onehot['Town'] = singapore_town_venues['Town'] 
+sg_onehot['Town'] = singapore_town_venues['Town']
 
 # move neighborhood column to the first column
 fixed_columns = [sg_onehot.columns[-1]] + list(sg_onehot.columns[:-1])
@@ -1428,7 +1425,7 @@ ________
     7          Noodle Houses  0.03
     8      Ramen Restaurants  0.03
     9            Restaurants  0.03
-    
+
 ________    
     # Town=< BEDOK >
                         venue  freq
@@ -1442,7 +1439,7 @@ ________
     7         Sandwich Places  0.03
     8  Indonesian Restaurants  0.03
     9      Indian Restaurants  0.03
-    
+
 ________
     # Town=< BISHAN >
                        venue  freq
@@ -1456,7 +1453,7 @@ ________
     7   American Restaurants  0.03
     8        Sandwich Places  0.03
     9    Italian Restaurants  0.03
-    
+
 ________    
     # Town=< BUKIT BATOK >
                        venue  freq
@@ -1470,7 +1467,7 @@ ________
     7    Italian Restaurants  0.05
     8       Thai Restaurants  0.05
     9      Asian Restaurants  0.05
-    
+
 ________    
     # Town=< BUKIT MERAH >
                              venue  freq
@@ -1484,7 +1481,7 @@ ________
     7  Modern European Restaurants  0.00
     8          Miscellaneous Shops  0.00
     9          Mexican Restaurants  0.00
-    
+
   ________  
     # Town=< BUKIT PANJANG >
                         venue  freq
@@ -1498,7 +1495,7 @@ ________
     7       Asian Restaurants  0.07
     8           Noodle Houses  0.07
     9                   Cafés  0.07
-    
+
 ________
     # Town=< CENTRAL >
                        venue  freq
@@ -1512,7 +1509,7 @@ ________
     7     Hotpot Restaurants  0.04
     8          Noodle Houses  0.04
     9  Fast Food Restaurants  0.04
-    
+
 ________
     # Town=< CHOA CHU KANG >
                         venue  freq
@@ -1526,7 +1523,7 @@ ________
     7  Portuguese Restaurants  0.04
     8         Sandwich Places  0.04
     9                   Cafés  0.04
-    
+
 ________
     # Town=< CLEMENTI >
                        venue  freq
@@ -1540,7 +1537,7 @@ ________
     7    Chinese Restaurants  0.06
     8   Fried Chicken Joints  0.06
     9                  Cafés  0.03
-    
+
 ________
     # Town=< GEYLANG >
                                 venue  freq
@@ -1554,7 +1551,7 @@ ________
     7                      BBQ Joints  0.04
     8           Fast Food Restaurants  0.04
     9               Asian Restaurants  0.04
-    
+
 ________
     # Town=< HOUGANG >
                        venue  freq
@@ -1568,7 +1565,7 @@ ________
     7     Fish & Chips Shops  0.04
     8        Sandwich Places  0.04
     9         Shopping Malls  0.04
-    
+
 ________
     # Town=< JURONG EAST >
                           venue  freq
@@ -1582,7 +1579,7 @@ ________
     7  Chinese Breakfast Places  0.03
     8         Ramen Restaurants  0.03
     9             Noodle Houses  0.03
-    
+
 ________
     # Town=< JURONG WEST >
                         venue  freq
@@ -1596,7 +1593,7 @@ ________
     7         Sandwich Places  0.03
     8   Hong Kong Restaurants  0.03
     9  Indonesian Restaurants  0.03
-    
+
 ________
     # Town=< KALLANG/WHAMPOA >
                      venue  freq
@@ -1610,7 +1607,7 @@ ________
     7     Thai Restaurants  0.07
     8   Indian Restaurants  0.07
     9  Italian Restaurants  0.00
-    
+
 ________
     # Town=< MARINE PARADE >
                      venue  freq
@@ -1624,7 +1621,7 @@ ________
     7     Thai Restaurants  0.05
     8        Dessert Shops  0.05
     9         Coffee Shops  0.05
-    
+
 ________
     # Town=< PASIR RIS >
                        venue  freq
@@ -1638,7 +1635,7 @@ ________
     7    Italian Restaurants  0.06
     8      Sushi Restaurants  0.06
     9            Restaurants  0.06
-    
+
 ________
     # Town=< PUNGGOL >
                           venue  freq
@@ -1652,7 +1649,7 @@ ________
     7  Comfort Food Restaurants  0.04
     8              Coffee Shops  0.04
     9       Chinese Restaurants  0.04
-    
+
 ________
     # Town=< QUEENSTOWN >
                              venue  freq
@@ -1666,7 +1663,7 @@ ________
     7  Modern European Restaurants  0.00
     8          Miscellaneous Shops  0.00
     9          Mexican Restaurants  0.00
-    
+
 ________
     # Town=< SEMBAWANG >
                        venue  freq
@@ -1680,7 +1677,7 @@ ________
     7      Sushi Restaurants  0.06
     8    Chinese Restaurants  0.06
     9                  Cafés  0.06
-    
+
 ________
     # Town=< SENGKANG >
                        venue  freq
@@ -1694,7 +1691,7 @@ ________
     7      Sushi Restaurants  0.06
     8        Sandwich Places  0.06
     9    Mexican Restaurants  0.00
-    
+
 ________
     # Town=< SERANGOON >
                        venue  freq
@@ -1708,7 +1705,7 @@ ________
     7    Chinese Restaurants  0.05
     8            Food Courts  0.05
     9       Thai Restaurants  0.05
-    
+
 ________
     # Town=< TAMPINES >
                        venue  freq
@@ -1722,7 +1719,7 @@ ________
     7   Fried Chicken Joints  0.04
     8   Dumpling Restaurants  0.04
     9           Pizza Places  0.04
-    
+
 ________
     # Town=< TOA PAYOH >
                        venue  freq
@@ -1736,7 +1733,7 @@ ________
     7        Sandwich Places  0.03
     8    Italian Restaurants  0.03
     9      Asian Restaurants  0.03
-    
+
 ________
     # Town=< WOODLANDS >
                        venue  freq
@@ -1750,7 +1747,7 @@ ________
     7    Italian Restaurants  0.03
     8   Fried Chicken Joints  0.03
     9           Pizza Places  0.03
-    
+
 ________
     # Town=< YISHUN >
                        venue  freq
@@ -1862,7 +1859,7 @@ ________
 </div>
 
 
-## RESULTS : *k*-means Cluster Results 
+## RESULTS : *k*-means Cluster Results
 #### Clustered results for *k*-means to cluster with 5 clusters.
 
 <table border="1" class="dataframe">
@@ -2426,10 +2423,10 @@ ________
 </table>
 </div>
 
-<img src = "https://raw.githubusercontent.com/crismag/Coursera_Capstone/master/saved_data/clustered_vicimap.png" width = 800, align = "center">
-<a href="https://raw.githubusercontent.com/crismag/Coursera_Capstone/master/saved_data/singapore_food_venues.600Scores.Category.csv" target="_blank">Download Github:singapore_food_venues</a>
-<a href="https://raw.githubusercontent.com/crismag/Coursera_Capstone/master/saved_data/singapore_outdoorAndRecration.Category.noscore.csv" target="_blank">Download Github:singapore_outdoorAndRecreation</a>
-<a href="https://raw.githubusercontent.com/crismag/Coursera_Capstone/master/saved_data/singapore_Nightlife_by_town.Category.csv" target="_blank">Download Github:singapore_Nightlife</a>
+<img src = "https://raw.githubusercontent.com/jmsulyt/Coursera_Capstone/master/saved_data/clustered_vicimap.png" width = 800, align = "center">
+<a href="https://raw.githubusercontent.com/jmsulyt/Coursera_Capstone/master/saved_data/singapore_food_venues.600Scores.Category.csv" target="_blank">Download Github:singapore_food_venues</a>
+<a href="https://raw.githubusercontent.com/jmsulyt/Coursera_Capstone/master/saved_data/singapore_outdoorAndRecration.Category.noscore.csv" target="_blank">Download Github:singapore_outdoorAndRecreation</a>
+<a href="https://raw.githubusercontent.com/jmsulyt/Coursera_Capstone/master/saved_data/singapore_Nightlife_by_town.Category.csv" target="_blank">Download Github:singapore_Nightlife</a>
 
 ________
 
@@ -2437,17 +2434,12 @@ ________
 
 On this notebook, Analysis of best town venue recommendations based on Food venue category has been presented. Recommendations based on other user searches like available outdoor and recreation areas are also available. As singapore is a small country with a whole host of interesting venues scattered around the town, the information extracted in this notebook present on the town areas, will be a good supplement to web based recommendations for visitors to find out nearby venues of interest and be a useful aid in deciding a place to stay or where to go during their visits.
 
-Using Foursquare API, we have collected a good amount of venue recommnedations in Singapore Towns. Sourcing from the venue recommendations from FourSquare has its limitation, The list of venues is not exhaustive list of all the available venues is the area. Furthermore, not all the venues found in the the area has a stored ratings. For this reason, the number of analyzed venues are only about 50% of all the available venues initially collected. The results therefore may significantly change, when more information are collected on those with missing data. 
+Using Foursquare API, we have collected a good amount of venue recommnedations in Singapore Towns. Sourcing from the venue recommendations from FourSquare has its limitation, The list of venues is not exhaustive list of all the available venues is the area. Furthermore, not all the venues found in the the area has a stored ratings. For this reason, the number of analyzed venues are only about 50% of all the available venues initially collected. The results therefore may significantly change, when more information are collected on those with missing data.
 
 The generated clusters from our results shows that there are very good and interesting places located in areas where the median rents are cheaper. This kind of results may be very interesting for travelers who are also on budget constraints. Our results also yielded some interesting findings. For instance, The initial assumption among websites providing recommendations is that the Central Area that have the highest median rent also have better food venues. The results however shows that while Marine Parade, a cheaper location has better rated food courts. Result shows that most popular food venue among Singaporeans, residents and visitors are **Food Courts, Coffee Shops and Fast Food Restaurants**. The highest rated Food Courts are located in __Marine Parade__, and in __Central Area__.
 
 I will be providing a other supplementary Inferential Statics in the future about on these data collected and also update in a new notebook using other categories. For now, this completes the requirements for this task.
 
 Thank you.
-
-Cris Magalang  
-email: crism.dev@gmail.com  
-linkedin: www.linkedin.com/in/crismagalang  
-
 
 Created For: COURSERA __**IBM Applied Data Science Capstone** Project__
